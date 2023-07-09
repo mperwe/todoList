@@ -63,6 +63,11 @@ function displayToView(){
 // create delete icon
     const deleteIcon = document.createElement("i")
     deleteIcon.className ="fa fa-trash"
+
+// add Delete eventListener
+    deleteIcon.addEventListener("click", function(){
+        removeListItem(todoList[i], listItem)
+     })
     iconDiv.appendChild(deleteIcon)
     listItem.appendChild(iconDiv)  
     // append listItem to todoListItems UL
@@ -70,7 +75,6 @@ function displayToView(){
             }
 // append the UL to the div element
         todoDiv.appendChild(todoListItems)
-
 }
 
 //display items on pageload
