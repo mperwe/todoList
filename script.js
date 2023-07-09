@@ -38,6 +38,11 @@ function displayToView(){
 // create a checkbox
       const checkbox = document.createElement("input")
       checkbox.type = 'checkbox'
+
+    // add checkbox eventListener
+    checkbox.addEventListener("click", function(){
+       removeListItem(todoList[i], listItem)
+    })
       divEl.appendChild(checkbox)
 // create text span
     const textSpan = document.createElement("span")
@@ -65,9 +70,24 @@ function displayToView(){
             }
 // append the UL to the div element
         todoDiv.appendChild(todoListItems)
+
 }
 
 //display items on pageload
 window.onload = function(){
     displayToView()
+}
+
+//function to Delete Items from the localStorage
+function removeListItem(item, listItem){
+   const storedList= localStorage.getItem("todoList")
+   const parsedData=JSON.parse(storedList)
+   const index=parsedData.indexOf(item)
+   if(index>-1){
+    parsedData.splice(index,1)
+    localStorage.setItem("todoList", JSON.stringify(parsedData))
+   }
+
+   listItem.remove()
+
 }
