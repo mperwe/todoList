@@ -1,0 +1,34 @@
+*{
+    margin: 0 auto  /* Top Rigt (TR) Bottom Left(BL)*/ 
+}
+
+.container{
+    display: flex;  /* Top Rigt (TR) Bottom Left(BL)*/ 
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+    flex-direction: column; 
+    font-family:"Roboto", sans-serif; /* google font family*/   
+}
+
+.content{
+    margin-top: 20px; /* separation from top parent*/ 
+  
+}
+
+.todoInput{    /* defining styles input element*/ 
+    width: 300px;
+    height: 30px;
+    border-radius: 25px;
+    padding: 7px;
+}
+
+.submit{
+    border-radius: 25px;
+    height: 45px;
+    width: 80px;
+    padding: 7px;
+    justify-content: center;
+    text-align: center;
+}
