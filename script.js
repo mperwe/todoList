@@ -28,33 +28,46 @@ function displayToView(){
     var todoDiv = document.getElementById('todoListItems')
  // create an unordered list element   
     const todoListItems = document.createElement('ul') 
-   // loop over array from localstorage
+// loop over array from localstorage
    for(let i=0;i<todoList.length;i++){
       const listItem = document.createElement("li")
+// creating parent div
+    const divEl = document.createElement("div")
+    divEl.className = "textDiv"
+        
 // create a checkbox
       const checkbox = document.createElement("input")
       checkbox.type = 'checkbox'
-      listItem.appendChild(checkbox)
+      divEl.appendChild(checkbox)
 // create text span
     const textSpan = document.createElement("span")
     textSpan.textContent = todoList[i]
-    listItem.appendChild(textSpan)
+    divEl.appendChild(textSpan)
+
+    listItem.appendChild(divEl) // appending to the listItem
+
+//create parent Div for icons
+    const iconDiv= document.createElement("div")
+    iconDiv.className = "iconDiv"
 
 // create edit icon
     const editIcon = document.createElement("i") 
     editIcon.className = "fa fa-pencil-square-o" 
-    listItem.appendChild(editIcon)      
+    iconDiv.appendChild(editIcon)      
 
 // create delete icon
     const deleteIcon = document.createElement("i")
     deleteIcon.className ="fa fa-trash"
-    listItem.appendChild(deleteIcon)
-    
+    iconDiv.appendChild(deleteIcon)
+    listItem.appendChild(iconDiv)  
     // append listItem to todoListItems UL
     todoListItems.appendChild(listItem)
-    
-        }
+            }
 // append the UL to the div element
         todoDiv.appendChild(todoListItems)
+}
 
+//display items on pageload
+window.onload = function(){
+    displayToView()
 }
