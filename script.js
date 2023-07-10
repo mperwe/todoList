@@ -16,18 +16,28 @@ function saveTodoListToStorage(todoItems){
 function onSubmitTodo(){  //On submit to do function
 var todoList = getListFromStorage()  // variable to store todolist Items 
 // get input text.
-var todoItem = document.getElementById("todoInput").value
-todoList.push(todoItem)
-// store in local storage.
-saveTodoListToStorage(todoList)
+let inputField = document.getElementById("todoInput")
+let todoItem = inputField.value
+// Only add item to local storage if a value has been entered
+if(todoItem) {
+    todoList.push(todoItem)
+    // store in local storage.
+    saveTodoListToStorage(todoList)
+}
+
+// reset input form after submit
+inputField.value = ""
 }
 //function Display Item to View.
 function displayToView(){
     var todoList=getListFromStorage()
  // acces the div element by id   
     var todoDiv = document.getElementById('todoListItems')
- // create an unordered list element   
-    const todoListItems = document.createElement('ul') 
+ // create an unordered list element 
+    const todoListItems = document.createElement('ul')
+
+// clear content of Div Element
+    todoDiv.innerHTML=""
 // loop over array from localstorage
    for(let i=0;i<todoList.length;i++){
     const listItem = addListItem(todoList[i])
