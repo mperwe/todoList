@@ -1,38 +1,47 @@
-
+body {
+    background-color: rgb(211, 195, 205);
+   
+      }
 .container{
     display: flex;  /* Top Rigt (TR) Bottom Left(BL)*/ 
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 40px;
+    margin-top: 20px;
     flex-direction: column; 
     font-family:"Roboto", sans-serif; /* google font family*/   
 }
 
 .content{
-    margin-top: 20px; /* separation from top parent*/ 
+    margin-top: 00px; /* separation from top parent*/ 
 }
 
 .todoInput{    /* defining styles input element*/ 
     width: 300px;
-    height: 30px;
-    border-radius: 25px;
+    height: 40px;
+    border-radius: 10px;
     padding: 7px;
-}
+   }
 
 .submit{
-    border-radius: 25px;
-    height: 45px;
-    width: 100px;
+    border-radius: 10px;
+    height: 60px;
+    width: 106px;
     padding: 7px;
     justify-content: center;
     text-align: center;
+    color: white;
+    background-color: black;
 }
 
 #todoListItems {
     border: 2px solid;
-    width: 380px;
+    width: 400px;
     margin: 30px 12px 0 0; 
+    background-color:(255, 255, 255, 0.8);
+    padding: 10px;
+    margin: 1px;
+    border-radius: 10px;
 }
 
 ul {
@@ -57,12 +66,4 @@ li{
     & i {
      margin-left: 15px;
     }
-}
-
-.edit-input{
-width: 200px;
-height: 30px;
-border-radius: 25px;
-margin-left: 0;
-
 }
